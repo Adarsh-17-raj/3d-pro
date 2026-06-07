@@ -20,7 +20,7 @@ namespace ThreeDShopping.API.Models
         public decimal Price { get; set; }
 
         [Required]
-        public int StockQuantity { get; set; } // Handles Product Availability [cite: 4]
+        public int StockQuantity { get; set; }
 
         [Required]
         public int CategoryId { get; set; }
@@ -28,10 +28,10 @@ namespace ThreeDShopping.API.Models
         [ForeignKey("CategoryId")]
         public Category? Category { get; set; }
 
-        [cite_start]// 3D Visualizer Fields 
+        // 3D Visualizer Fields 
         [Required]
-        public string ThreeDModelUrl { get; set; } = string.Empty; // Path to .gltf/.glb asset file
+        public string ThreeDModelUrl { get; set; } = string.Empty;
 
-        public string? ThumbnailUrl { get; set; } // For fast-loading image previews
+        public string? ThumbnailUrl { get; set; }
     }
 }
