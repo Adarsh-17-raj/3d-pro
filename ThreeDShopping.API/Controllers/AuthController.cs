@@ -44,7 +44,13 @@ namespace ThreeDShopping.API.Controllers
                 return Unauthorized("Invalid credentials.");
 
             // To keep things simple before adding JWT, return user details
-            return Ok(new { message = "Login successful", userId = user.Id, username = user.Username });
+            // To keep things simple before adding JWT, return user details
+            return Ok(new
+            {
+                message = "Login successful",
+                userId = user.Id,
+                username = user.Username ?? "User"
+            });
         }
     }
 }
